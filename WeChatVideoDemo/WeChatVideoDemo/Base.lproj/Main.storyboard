@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="whF-sC-E9X">
+                                <rect key="frame" x="165.5" y="392" width="43" height="30"/>
+                                <state key="normal" title="Player"/>
+                                <connections>
+                                    <action selector="playerBtnFunc:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NeB-5c-hYY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idy-mz-fPU">
+                                <rect key="frame" x="38" y="318" width="89" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Downloading"/>
+                                <connections>
+                                    <action selector="downloadingBtnFunc:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pOl-Gi-qqP"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="yXI-Py-amd">
+                                <rect key="frame" x="54" y="497" width="267" height="31"/>
+                                <connections>
+                                    <action selector="sliderValueChangeFunc:" destination="BYZ-38-t0r" eventType="valueChanged" id="fd0-xc-siZ"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="yXI-Py-amd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="4c8-iP-1Fr"/>
+                            <constraint firstItem="yXI-Py-amd" firstAttribute="top" secondItem="whF-sC-E9X" secondAttribute="bottom" constant="75" id="4s2-ic-ruf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yXI-Py-amd" secondAttribute="trailing" constant="40" id="RUl-FR-nHj"/>
+                            <constraint firstItem="yXI-Py-amd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZJQ-vK-7Di"/>
+                            <constraint firstItem="whF-sC-E9X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kO5-H3-wWF"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yXI-Py-amd" secondAttribute="bottom" constant="140" id="kof-kA-YPg"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QXPlayerViewController">
+            <connections>
+                <outlet property="closeButton" destination="CgF-v0-oTi" id="8Vg-qQ-S29"/>
+                <outlet property="playButton" destination="sFq-58-Y9U" id="1Ce-sF-jMx"/>
+                <outlet property="settingButton" destination="yO3-2z-wJs" id="XNL-gc-Si8"/>
+                <outlet property="startPlayButton" destination="QZ0-Y9-MIh" id="bnd-f2-Sfo"/>
+                <outlet property="thumbImageView" destination="7ck-Kq-QDv" id="6l6-lv-WLe"/>
+                <outlet property="videoCurrentTimeLabel" destination="u23-fq-mL1" id="O6M-RZ-5bf"/>
+                <outlet property="videoProgressSlider" destination="9UG-In-XwH" id="52d-xt-zKJ"/>
+                <outlet property="videoTotalTimeLabel" destination="SBN-gA-s2R" id="cj8-qq-gj6"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7ck-Kq-QDv">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QZ0-Y9-MIh">
+                    <rect key="frame" x="156" y="302" width="62" height="62"/>
+                    <state key="normal" image="icon_play"/>
+                    <connections>
+                        <action selector="startPlayBtnFunc:" destination="-1" eventType="touchUpInside" id="LqZ-Jq-Vsj"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CgF-v0-oTi">
+                    <rect key="frame" x="14" y="8" width="44" height="44"/>
+                    <state key="normal" image="icon_close_"/>
+                    <connections>
+                        <action selector="closeBtnFunc:" destination="-1" eventType="touchUpInside" id="zbl-fa-XgS"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yO3-2z-wJs">
+                    <rect key="frame" x="317" y="8" width="44" height="44"/>
+                    <state key="normal" image="icon_more_"/>
+                    <connections>
+                        <action selector="settingBtnFunc:" destination="-1" eventType="touchUpInside" id="Thf-dI-etA"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFq-58-Y9U">
+                    <rect key="frame" x="14" y="609" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="gNn-6y-SI3"/>
+                        <constraint firstAttribute="width" constant="44" id="qOs-X5-dN7"/>
+                    </constraints>
+                    <state key="normal" image="icon_start"/>
+                    <state key="selected" image="icon_videoPause"/>
+                    <connections>
+                        <action selector="playBtnfunc:" destination="-1" eventType="touchUpInside" id="UUp-3y-Cwb"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u23-fq-mL1">
+                    <rect key="frame" x="72" y="625.5" width="29" height="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="9UG-In-XwH">
+                    <rect key="frame" x="111" y="616" width="211" height="31"/>
+                    <color key="minimumTrackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="maximumTrackTintColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                </slider>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBN-gA-s2R">
+                    <rect key="frame" x="332" y="625.5" width="29" height="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="7ck-Kq-QDv" secondAttribute="bottom" id="0os-Sj-hm9"/>
+                <constraint firstItem="9UG-In-XwH" firstAttribute="centerY" secondItem="sFq-58-Y9U" secondAttribute="centerY" id="2wq-37-g33"/>
+                <constraint firstItem="yO3-2z-wJs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="50m-ex-KmZ"/>
+                <constraint firstItem="sFq-58-Y9U" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="14" id="BBP-JV-bqn"/>
+                <constraint firstAttribute="trailing" secondItem="SBN-gA-s2R" secondAttribute="trailing" constant="14" id="D7s-Iv-EeG"/>
+                <constraint firstItem="CgF-v0-oTi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="14" id="DAg-dq-D4m"/>
+                <constraint firstItem="u23-fq-mL1" firstAttribute="leading" secondItem="sFq-58-Y9U" secondAttribute="trailing" constant="14" id="J0h-2A-Du6"/>
+                <constraint firstItem="CgF-v0-oTi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="LUZ-Zo-AQ2"/>
+                <constraint firstAttribute="trailing" secondItem="yO3-2z-wJs" secondAttribute="trailing" constant="14" id="T1m-dn-zsW"/>
+                <constraint firstItem="QZ0-Y9-MIh" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Z3w-AM-LnQ"/>
+                <constraint firstItem="7ck-Kq-QDv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Zbh-6p-pnr"/>
+                <constraint firstItem="SBN-gA-s2R" firstAttribute="centerY" secondItem="sFq-58-Y9U" secondAttribute="centerY" id="bxE-AH-LKm"/>
+                <constraint firstAttribute="trailing" secondItem="7ck-Kq-QDv" secondAttribute="trailing" id="ggf-KE-hqd"/>
+                <constraint firstItem="7ck-Kq-QDv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="hjF-qU-Y9L"/>
+                <constraint firstItem="9UG-In-XwH" firstAttribute="leading" secondItem="u23-fq-mL1" secondAttribute="trailing" constant="12" id="jY8-5j-GG4"/>
+                <constraint firstItem="QZ0-Y9-MIh" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="kZM-Jf-wzb"/>
+                <constraint firstItem="u23-fq-mL1" firstAttribute="centerY" secondItem="sFq-58-Y9U" secondAttribute="centerY" id="n2c-2k-YvY"/>
+                <constraint firstItem="SBN-gA-s2R" firstAttribute="leading" secondItem="9UG-In-XwH" secondAttribute="trailing" constant="12" id="odw-Yf-bbO"/>
+                <constraint firstAttribute="bottom" secondItem="sFq-58-Y9U" secondAttribute="bottom" constant="14" id="z5m-zc-Het"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_close_" width="44" height="44"/>
+        <image name="icon_more_" width="44" height="44"/>
+        <image name="icon_play" width="62" height="62"/>
+        <image name="icon_start" width="44" height="44"/>
+        <image name="icon_videoPause" width="44" height="44"/>
+    </resources>
+</document>
