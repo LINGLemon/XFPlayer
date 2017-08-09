@@ -190,7 +190,7 @@
     
     AVPlayerLayer *playerLayer = [AVPlayerLayer playerLayerWithPlayer:_player];
     playerLayer.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
-    playerLayer.videoGravity = AVLayerVideoGravityResize;
+    playerLayer.videoGravity = AVLayerVideoGravityResizeAspect;
     [self.view.layer addSublayer:playerLayer];
     
     [self.view bringSubviewToFront:self.closeButton];
