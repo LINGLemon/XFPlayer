@@ -79,6 +79,11 @@
 {
     [super viewWillAppear:animated];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillResignActive:)
+                                                 name:UIApplicationWillResignActiveNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(audioRouteChangeListenerCallback:) name:AVAudioSessionRouteChangeNotification object:nil];
+    
 //    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"video_thumb" ofType:@"jpg"];
 //    UIImage *image = [UIImage imageWithContentsOfFile:imagePath];
 //    [self.thumbImageView setImage:image];
@@ -94,6 +99,15 @@
     [super viewDidAppear:animated];
     
     [self startPlayBtnFunc:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillResignActiveNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:AVAudioSessionRouteChangeNotification object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -521,5 +535,28 @@
     }
 }
 
+#pragma mark - 进入后台通知
+- (void)applicationWillResignActive:(NSNotification *)notification
+{
+    [self playOrStop:NO];
+}
+
+#pragma mark - 监听耳机插入拔出
+
+- (void)audioRouteChangeListenerCallback:(NSNotification*)notification {
+    
+    NSDictionary *interuptionDict = notification.userInfo;
+    
+    NSInteger routeChangeReason = [[interuptionDict valueForKey:AVAudioSessionRouteChangeReasonKey] integerValue];
+    
+    switch (routeChangeReason) {
+        case AVAudioSessionRouteChangeReasonNewDeviceAvailable:
+            break;
+            
+        case AVAudioSessionRouteChangeReasonOldDeviceUnavailable:
+            [self playOrStop:YES];
+            break;
+    }
+}
 
 @end
